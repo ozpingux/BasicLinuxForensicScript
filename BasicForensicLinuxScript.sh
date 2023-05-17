@@ -55,6 +55,8 @@ ls -lah /var/tmp/ > /tmp/ExtractedInfo/temp_list00.txt
 ls -lah /usr/bin/ > /tmp/ExtractedInfo/binusr_tree0.txt
 ls -lah /bin/ > /tmp/ExtractedInfo/bin_tree0.txt
 ls -lah /bin/ > /tmp/ExtractedInfo/bin0.txt
+# Journal Data
+journalctl > /tmp/ExtractedInfo/journal_data.txt
 #USB History 
 cat /var/log/kern.log | grep usb > /tmp/ExtractedInfo/USBHistory-1.txt
 cat /var/log/syslog | grep usb > /tmp/ExtractedInfo/USBHistory-2.txt
