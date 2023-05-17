@@ -1,6 +1,7 @@
 #!/bin/bash
 #Script to extract activities and relevant information from the system
 #Creation of a folder where the hashes and files to be extracted will be stored
+output_dir="/tmp/ExtractedInfo/"
 mkdir /tmp/ExtractedInfo/
 mkdir /tmp/ExtractedInfo/hash/
 #Permissions to folder and extraction script
@@ -54,6 +55,22 @@ ls -lah /var/tmp/ > /tmp/ExtractedInfo/temp_list00.txt
 ls -lah /usr/bin/ > /tmp/ExtractedInfo/binusr_tree0.txt
 ls -lah /bin/ > /tmp/ExtractedInfo/bin_tree0.txt
 ls -lah /bin/ > /tmp/ExtractedInfo/bin0.txt
+# USB History
+for user_home in /home/*; do
+    usb_history_file="$user_home/.local/share/recently-used.xbel"
+
+    if [ -f "$usb_history_file" ]; then
+        cp "$usb_history_file" "$output_dir/usb_history_$user_home.txt"
+    fi
+done
+# File Recent History
+for user_home in /home/*; do
+    recent_history_file="$user_home/.recently-used.xbel"
+
+    if [ -f "$recent_history_file" ]; then
+        cp "$recent_history_file" "$output_dir/recent_history_$user_home.txt"
+    fi
+done
 # Wi-Fi History
 cat /etc/NetworkManager/system-connections/* > /tmp/ExtractedInfo/wifi_connectionHistory.txt
 nmcli con show > /tmp/ExtractedInfo/wifi_connectionHistory-2.txt
