@@ -54,6 +54,10 @@ ls -lah /var/tmp/ > /tmp/ExtractedInfo/temp_list00.txt
 ls -lah /usr/bin/ > /tmp/ExtractedInfo/binusr_tree0.txt
 ls -lah /bin/ > /tmp/ExtractedInfo/bin_tree0.txt
 ls -lah /bin/ > /tmp/ExtractedInfo/bin0.txt
+# Wi-Fi History
+cat /etc/NetworkManager/system-connections/* > /tmp/ExtractedInfo/wifi_connectionHistory.txt
+nmcli con show > /tmp/ExtractedInfo/wifi_connectionHistory-2.txt
+nmcli -f TYPE,TIMESTAMP,NAME con show > /tmp/ExtractedInfo/wifi_connectionTime.txt
 #tree -df / > /tmp/ExtractedInfo/treefiles0.txt
 #System user enumeration
 users > /tmp/ExtractedInfo/users.txt
