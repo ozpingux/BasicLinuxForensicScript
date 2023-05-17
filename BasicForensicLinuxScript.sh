@@ -130,6 +130,7 @@ arp -a > /tmp/ExtractedInfo/arp0.txt
 arp -v > /tmp/ExtractedInfo/arp00.txt
 #List of connected USB devices
 lsusb > /tmp/ExtractedInfo/lsusb0.txt
+lsblk > /tmp/ExtractedInfo/lsblk0.txt
 #List of modules loaded by the Kernel
 dmesg > /tmp/ExtractedInfo/dmesg0.txt
 dmesg | grep -i promisc > /tmp/ExtractedInfo/dmesg02.txt
