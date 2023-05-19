@@ -180,8 +180,24 @@ cat /etc/sudoers > /tmp/ExtractedInfo/sudoers0.txt
 crontab -l > /tmp/ExtractedInfo/crontab000.txt
 #List of network interfaces - customize according to the operating system
 cat /etc/network/interfaces > /tmp/ExtractedInfo/interfaces0.txt
-find / -name \*.bin > /tmp/ExtractedInfo/Executablefinder0.txt
-find / -name \*.exe > /tmp/ExtractedInfo/Executablefinder00.txt
+#Search for executables and scripts
+find / -name \*.bin > /tmp/ExtractedInfo/Executablefinder-BIN.txt
+find / -name \*.exe > /tmp/ExtractedInfo/Executablefinder-EXE.txt
+find / -name \*.sh > /tmp/ExtractedInfo/Executablefinder-SH.txt
+find / -name \*.py > /tmp/ExtractedInfo/Executablefinder-PY.txt
+find / -name \*.pl > /tmp/ExtractedInfo/Executablefinder-pl.txt
+find / -name \*.csh > /tmp/ExtractedInfo/Executablefinder-csh.txt
+find / -name \*.ksh > /tmp/ExtractedInfo/Executablefinder-ksh.txt
+find / -name \*.tcsh > /tmp/ExtractedInfo/Executablefinder-tcsh.txt
+find / -name \*.zsh > /tmp/ExtractedInfo/Executablefinder-zsh.txt
+find / -name \*.rb > /tmp/ExtractedInfo/Executablefinder-rb.txt
+find / -name \*.awk > /tmp/ExtractedInfo/Executablefinder-awk.txt
+find / -name \*.ps1 > /tmp/ExtractedInfo/Executablefinder-ps1.txt
+find / -name \*.js > /tmp/ExtractedInfo/Executablefinder-js.txt
+find / -name \*.php > /tmp/ExtractedInfo/Executablefinder-php.txt
+find / -name \*.vbs > /tmp/ExtractedInfo/Executablefinder-vbs.txt
+find / -name \*.bat > /tmp/ExtractedInfo/Executablefinder-bat.txt
+find / -name \*.cmd > /tmp/ExtractedInfo/Executablefinder-cmd.txt
 #Search for files or links redirected to dev-null
 lsof -w /dev/null > /tmp/ExtractedInfo/redireccion_null0.txt
 find /var/log -type f -printf "%P,%A+,%T+,%C+,%u,%g,%M,%s\n" > /tmp/ExtractedInfo/VarLogTimeline.txt
