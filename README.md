@@ -1,3 +1,3 @@
-# BasicLinuxForensicScript
+# Linux Forensic Script
 
-Script to extract data related to user traces and system information. 
+Bash Script to extract GNU/Linux forensic artifacts for digital forensic analysis and incident response. 
